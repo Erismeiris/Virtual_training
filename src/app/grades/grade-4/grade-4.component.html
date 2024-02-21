@@ -1,0 +1,79 @@
+<div class="flex flex-wrap">
+    <div class="w-5/6 sm:w-1/2 p-6">
+      <h3 class="text-3xl text-gray-800 font-bold leading-none mb-3">
+        Annual Teaching Plan
+      </h3>
+      <p class="text-gray-600 mb-8">
+        PROPERTIES OF 2D SHAPES <span>Grade 4</span>
+      </p>
+      <table class="border-collapse border border-slate-500 ">
+        <thead class="bg-slate-400">
+          <tr class="border-sky-1">
+            <th class="border border-slate-600 ">Term</th>
+            <th class="border border-slate-600 ">Topic</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="3" class="border border-slate-600 ">Term 4</td>
+            <td class="border border-slate-600 ">
+              <ul>
+                <li><strong>Range of shapes: </strong>Recognize, visualize and name 2-D shapes in the environment and
+                  geometric setting, focusing on:
+                  <ul>
+                    <li class="underline"
+                      matTooltip="is a polygon that has all sides of equal length and all angles of equal measure">
+                      regular polygons</li>
+                    <li class="underline"
+                      matTooltip="is polygon that have sides and angles of different measures and lengths"> irregular
+                      polygons</li>
+                    <li>triangles</li>
+                    <li>squares, rectangles, other quadrilaterals, pentagons, hexagons, heptagons</li>
+                    <li>Circles</li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-slate-600 ">
+              <ul>
+                <li><strong>Characteristics of shapes: </strong>Describe, sort and compare 2-D shapes in terms of:
+                  <ul>
+                    <li>straight and curved sides </li>
+                    <li>number of sides </li>
+                  </ul>
+                </li>
+              </ul>
+            </td>
+          </tr>
+          <tr>
+            <td class="border border-slate-600 ">
+              <strong>Further activities:</strong>
+              Draw 2-D shapes on grid paper
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="w-full sm:w-1/2 p-6">
+      <img src="{{imageSourceGrade4}}" alt="2D-shapes">
+      <span><button (click)="grade4ChangueImag(0)" class="underline">Picture 1</button> | <button (click)="grade4ChangueImag(1)" class="underline">Picture 2</button> | <button (click)="grade4ChangueImag(2)" class="underline">Picture 3</button>
+      </span>
+    </div>
+  </div>
+
+  <div class="h-auto mx-auto w-100 my-0 py-0 rounded-t">
+    <h3>Practice activity</h3>
+    <p>Open OpenBoard software and in the toolbar menu find the option interactivities and create the below quiz. </p>
+    <label>What defines a regular polygon?</label><br>
+    <input type="radio" id="a" name="regular_polygon" value="a">
+    <label for="a">All sides are the same length and all angles are the same measure.</label><br>
+    <input type="radio" id="b" name="regular_polygon" value="b">
+    <label for="b">All sides are the same length but angles can vary</label><br>
+    <input type="radio" id="c" name="regular_polygon" value="c">
+    <label for="c">All angles are the same measure but sides can vary.</label><br>
+    <input type="radio" id="d" name="regular_polygon" value="d">
+    <label for="d">Each side is parallel to another side.</label><br>
+    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded mb-5">Submit</button>
+</div>

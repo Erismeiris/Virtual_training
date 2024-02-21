@@ -1,0 +1,28 @@
+
+mat-toolbar{
+    justify-content: center;
+}
+.img{
+    width: 100px;
+    height: 50px;
+    margin-right: 20px;
+    
+}
+
+#theme{
+    margin-left: 20px;
+    color: yellowgreen;
+}
+.custom-file-upload {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+  }
+
+  .custom-file-upload:hover {
+    background-color: #45a049;
+  }

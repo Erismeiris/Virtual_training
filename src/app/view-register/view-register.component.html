@@ -1,0 +1,137 @@
+
+<div id="content">
+    <table>
+        <thead>
+        <tr>
+            <th>Attendance Register 2024</th>
+            <th><img class="img" src="/assets/images/Free_state.png" alt="logo"></th>
+        </tr> 
+        <tr>
+            <th colspan="2">
+                Name of trainer/ service provider: {{traderName}}
+            </th>
+        </tr> 
+        <tr>
+            <th>
+                Description of training/ specification of content: {{trainingDescription}}
+            </th>
+            <th>
+                Performance measure (PPM) to which this training contributes: {{ppm}}
+            </th>
+        </tr>
+        <tr>
+            <th>
+                Subject: {{subject}}
+            </th>
+            <th>
+                Target Group: {{target}}
+            </th>
+        </tr>  
+        <tr>
+            <th>Venue: {{venue}}</th>
+            <th>Training Date: {{date}}</th>
+        </tr>  
+        </thead>
+    </table>
+    <table>
+        <thead>
+        <tr>
+            <th>Training is: </th>
+            <th>Tick:  </th>
+            <th>Accredited: </th>
+            <th>If is Accredited, indicate NQF level: ___________</th>
+            <th>SACE endorsed</th>
+            <th>__</th>
+            <th>NON-FORMAL</th>
+            <th></th>
+        </tr>
+        </thead>
+    </table>  
+ <table>
+    <thead>
+    <tr>
+        <td>Time of training: From: {{startTime}} to {{endTime}} </td>
+        <td>Actual No of Hours: {{noHours}}</td>
+        <td>Equity Targets: </td>
+    </tr>
+    </thead>
+ </table>
+
+ <table>
+    <thead>
+    <tr>
+        <th [colSpan]="7">Detail of participants:</th>
+        <th>Gender</th>
+        <th>Race</th>
+        <th>Dis-ability</th>
+        <th>Age group</th>
+        <th [colSpan]="2">Contact details</th>
+     </tr>
+     <tr>
+        <th>No</th>
+        <th>Surname</th>
+        <th>Initials</th>        
+        <th>Persal Number</th>
+        <th>Workplace (Schools)</th>
+        <th>Rank PL:</th>
+        <th>Grade</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>Telf/Cell</th>
+        <th>email address</th>        
+     </tr>
+     </thead>
+     <tbody>
+    <tr *ngFor="let participant of participants; let i = index">
+            <td>{{i + 1}}</td>
+            <td>{{participant.surname}}</td>
+            <td>{{participant.initials}}</td>
+            <td [ngClass]="{hiddenData: participant.persalNumber != persalNumber}">{{participant.persalNumber}}</td>
+            <td>{{participant.workplace}}</td>
+            <td>{{participant.rank_pl}}</td>
+            <td>{{participant.grade}}</td>
+            <td>{{participant.gender}}</td>
+            <td>{{participant.race}}</td>
+            <td>{{participant.disability}}</td>
+            <td>{{participant.age}}</td>
+            <td style="background-color: rgb(19, 19, 19);">{{participant.contact}}</td>
+            <td style="background-color: rgb(17, 16, 16);">{{participant.email}}</td>
+    </tr>
+</tbody>
+<tfoot>
+    <tr>
+        <td>{{participants.length}}</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+
+    </tr>
+</tfoot>
+ </table>
+   
+    
+</div>
+
+<div>
+    <button class="seeTable" (click)="download()">
+        Download <mat-icon>download</mat-icon> 
+      </button>
+   
+</div>
+
+
+    
+
+
+  

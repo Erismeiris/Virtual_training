@@ -1,0 +1,78 @@
+
+
+<form [formGroup]="form" >
+    <mat-form-field>
+        <mat-label>First Name</mat-label>
+      <input matInput  placeholder="Surname">
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Initial</mat-label>
+      <input matInput  placeholder="Initial">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Persal number</mat-label>
+      <input matInput  placeholder="Persal">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Distric</mat-label>
+        <mat-select>
+            <mat-option value="option1">Fezile Dabi</mat-option>
+            <mat-option value="option2">Lejweleputswa</mat-option>
+            <mat-option value="option3">Mangaung</mat-option>
+            <mat-option value="option4">Thabo Mofutsanyana</mat-option>
+            <mat-option value="option5">Xhariep</mat-option>
+        </mat-select>     
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Workplace</mat-label>
+      <input matInput  placeholder="Workplace">
+    </mat-form-field>
+    <mat-form-field placeholder="Gender">
+        <mat-label>Gender</mat-label>      
+      <mat-select>  
+            <mat-option value="option1">Male</mat-option>
+            <mat-option value="option2">Female </mat-option>                  
+      </mat-select>
+    </mat-form-field>    
+    <mat-form-field>
+        <mat-label>Race</mat-label>
+      <mat-select>
+        <mat-option value="option1">African</mat-option>
+        <mat-option value="option2">Coloured</mat-option>
+        <mat-option value="option3">Indian</mat-option>
+        <mat-option value="option4">White</mat-option>
+        <mat-option value="option4">Asian</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field>
+        <mat-label>Dis-ability</mat-label>
+        <mat-select>
+            <mat-option value="yes">Yes</mat-option>
+            <mat-option value="no">No</mat-option>
+        </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Qualification</mat-label>
+      <input matInput  placeholder="Qualification">
+    </mat-form-field>
+    <mat-form-field>
+       <mat-label>Contact number</mat-label>
+        <input matInput  placeholder="Contact number">
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput  placeholder="Email">
+    </mat-form-field>
+    <button mat-fab extended color="primary">
+        Send
+        <mat-icon>send</mat-icon>
+      </button>
+  </form>
+ <div class="container center">
+   <button class="seeTable">
+    <a href="/view_attendance_register">Register <mat-icon>visibility</mat-icon></a>    
+  </button>
+ </div>
+

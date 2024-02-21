@@ -1,0 +1,35 @@
+mat-form-field{
+    width: 20%;
+    padding: 10px;
+    margin: 10px;
+}
+
+button{
+    margin: 10px;    
+    width: 20%;
+    background-color: blueviolet;
+    border-radius: 20px;
+    color: white;
+    font: 20px  sans-serif;
+    align-items:inline-block;
+}
+.seeTable{
+    background-color: black;
+    width: 15%;
+    font-size: small;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.seeTable {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.seeTable a {
+    display: flex;
+    align-items: center;
+}

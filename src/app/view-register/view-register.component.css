@@ -1,0 +1,58 @@
+
+table {
+    width: 100%; 
+   height: 45px;  
+   border: 1px solid #000;
+   border-collapse: collapse;
+   
+
+}
+
+.img{
+   width: 100px;
+   height: 50px;
+   padding-bottom: 0;
+}
+
+th{
+   border: 1px solid #000;
+   background-color: #ccc;
+   margin-left: 0;
+   justify-content: left;
+   align-items: left;
+   text-align: left;
+}
+
+td{
+   border: 1px solid black;
+}
+
+button{
+   margin: 10px;    
+   width: 20%;
+   background-color: blueviolet;
+   border-radius: 20px;
+   color: white;
+   font: 20px  sans-serif;
+   align-items:inline-block;
+}
+.seeTable{
+   background-color: rgb(150, 146, 146);
+   width: 15%;
+   font-size: small;
+}
+
+.seeTable {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.seeTable mat-icon {
+   display: flex;
+   align-items: center;
+}
+
+.hiddenData{
+   background-color: rgb(8, 8, 8);
+}
