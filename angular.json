@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "newRegisterForm": {
+    "virtualtrainingopenboard": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -63,10 +63,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "newRegisterForm:build:production"
+              "buildTarget": "virtualtrainingopenboard:build:production"
             },
             "development": {
-              "buildTarget": "newRegisterForm:build:development"
+              "buildTarget": "virtualtrainingopenboard:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +74,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "newRegisterForm:build"
+            "buildTarget": "virtualtrainingopenboard:build"
           }
         },
         "test": {
@@ -95,6 +95,23 @@
             ],
             "scripts": []
           }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "version": 2
+          },
+          "configurations": {
+            "production": {
+              "buildTarget": "virtualtrainingopenboard:build:production",
+              "serveTarget": "virtualtrainingopenboard:serve:production"
+            },
+            "development": {
+              "buildTarget": "virtualtrainingopenboard:build:development",
+              "serveTarget": "virtualtrainingopenboard:serve:development"
+            }
+          },
+          "defaultConfiguration": "production"
         }
       }
     }

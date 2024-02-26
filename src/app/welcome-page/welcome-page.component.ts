@@ -7,6 +7,7 @@ import { Grade6Component } from '../grades/grade-6/grade-6.component';
 import { Grade7Component } from '../grades/grade-7/grade-7.component';
 
 
+
 @Component({
   selector: 'app-welcome-page',
   standalone: true,
@@ -16,7 +17,8 @@ import { Grade7Component } from '../grades/grade-7/grade-7.component';
     Grade4Component,
     Grade5Component,
     Grade6Component,
-    Grade7Component    
+    Grade7Component,
+       
 
   ],
   templateUrl: './welcome-page.component.html',

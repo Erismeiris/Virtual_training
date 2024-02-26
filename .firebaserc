@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "attendance-register-ca68d": {
+      "hosting": {
+        "virtualtrainingopenboard": [
+          "attendance-register-ca68d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "attendance-register-ca68d"
+  }
+}
