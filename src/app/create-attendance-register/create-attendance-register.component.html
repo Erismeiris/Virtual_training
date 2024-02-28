@@ -6,84 +6,87 @@
 </mat-grid-list>
 
 <!-- Form for attendance Register-->
-<form>
-  <mat-form-field>
-    <mat-label>Activity type:</mat-label>
-    <input matInput placeholder="Activity type">
-  </mat-form-field>
 
-   <mat-form-field>
-    <mat-label>Activity title</mat-label>
-    <input matInput placeholder="Type Activity title">
-  </mat-form-field>
 
-  <mat-form-field>
-    <mat-label>Name of trainer</mat-label>
-    <input matInput placeholder="Type trainer name">
-  </mat-form-field>
-
-  <mat-form-field style="width: 300px; height: 89px;">
-    <mat-label>Description of training</mat-label>
-    <textarea matInput ></textarea>
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>PPM</mat-label>
-    <input matInput placeholder="Performance measure(PPM)">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Subject / area</mat-label>
-    <input matInput placeholder="Type the subject or area">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Target group</mat-label>
-    <input matInput placeholder="Type de target group">
-  </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Venue</mat-label>
-    <input matInput placeholder="Venue">
-  </mat-form-field>
-
-  <mat-form-field style="color:black">
-    <mat-label>Choose a date</mat-label>
-    <input matInput type="date">   
-  </mat-form-field>
+<form class="max-w-sm mx-auto" [formGroup]="attendanceForm" (ngSubmit)="sendAttendanceForm()">
   
+  <div class="mb-5">
+      <label for="Activity type:" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Activity type:</label>
+      <input type="text" id="Activity type:" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Activity type" formControlName="activity_type">
+  </div>
 
-  <mat-form-field>
-    <mat-label>Accredited</mat-label>
-    <mat-select>
-      <mat-option value="yes">Yes</mat-option>
-      <mat-option value="no">No</mat-option>
-    </mat-select>
-  </mat-form-field>
+  <div class="mb-5">
+      <label for="Activity title:" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Activity title:</label>
+      <input type="text" id="Activity title:" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Activity title" formControlName="activity_title">
+  </div>
 
-  <mat-form-field >
-    <mat-label style="font-size: 12px;">If accredited, indicate NQF level:</mat-label>
-    <input matInput type="text" placeholder="NQF level">
-  </mat-form-field>
+  <div class="mb-5">
+    <label for="Name of trainer:" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Trainer name:</label>
+    <input type="text" id="Name of trainer:" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type your name" formControlName="name_of_trainer">
+</div>
 
-  <mat-form-field>
-    <mat-label>Time of training start</mat-label>
-    <input matInput type="time" placeholder="Type start time">
-  </mat-form-field>
+<div class="mb-5">
+  <label for="Activity description:" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Activity description:</label>
+  <input type="text" id="Activity description:" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Activity description" formControlName="description">
+</div>
 
-  <mat-form-field>
-    <mat-label>Time of training end</mat-label>
-    <input matInput type="time" placeholder="Type end time">
-  </mat-form-field>
+<div  class="mb-5">
+  <label for="PPM" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">PPM:</label>
+  <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Performance measure(PPM)" formControlName="ppm">
+</div>
 
-  <mat-form-field>
-    <mat-label>Equity Targets</mat-label>
-    <input matInput placeholder="Type Equity Targets">
-  </mat-form-field>  
+<div class="mb-5">
+  <label for="Subject / area" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Subject / area:</label>
+  <input type="text" id="Subject / area:" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type the subject or area" formControlName="subject">
+</div>
 
+<div class="mb-5">
+  <label for="Target_group" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Target group: </label>
+  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type de target group" formControlName="target_group">
+</div>
+
+<div class="mb-5">
+  <label for="Venue" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Venue: </label>
+  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Venue" formControlName="venue">
+</div>
+
+
+<div class="mb-5">
+  <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Choose a date: </label>
+  <input type="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Choose a date" formControlName="date">
+</div>
+
+
+<div class="mb-5">
+  <label for="Accredited" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Accredited?: </label>
+  <select name="accredited" id="accredited" formControlName="accredited" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+    <option value="yes">Yes</option>
+    <option value="no">No</option>
+  </select>
+</div>
+
+<div class="mb-5">
+  <label for="NQF level" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">If accredited, indicate NQF level:</label>
+  <input type="text" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="NQF level" formControlName="nqf_level"> 
+</div>
+
+<div class="mb-5">
+  <label for="Time of training start" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Time of training start:</label>
+  <input type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type start time" formControlName="start_time">
+</div>
+
+<div class="mb-5">
+  <label for="Time of training end" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Time of training end:</label>
+  <input type="time" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type end time" formControlName="end_time">
+</div>
+
+<div class="mb-5">
+  <label for="Equity Targets" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Equity Targets:</label>
+  <input type="number" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Type Equity Targets" formControlName="equity_targets">
+</div>
+
+<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit"
+ [disabled]="!attendanceForm.valid">Submit</button>
   
-  <button mat-fab extended color="primary">
-    Create
-    <mat-icon>send</mat-icon>
-  </button> 
 </form>
+

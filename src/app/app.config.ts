@@ -14,7 +14,7 @@ export const appConfig: ApplicationConfig = {
     provideAuth(() => {
     const auth = getAuth();
 
-    connectAuthEmulator(auth, 'http://localhost:9099', { disableWarnings: true });
+    
       
     return auth
   }
@@ -23,7 +23,6 @@ export const appConfig: ApplicationConfig = {
     {
      const firestore = getFirestore();
 
-     connectFirestoreEmulator(firestore, 'http://localhost', 9098);
 
      return firestore
 

@@ -26,3 +26,7 @@ mat-toolbar{
   .custom-file-upload:hover {
     background-color: #45a049;
   }
+
+  mat-form-field{
+    margin: 10px;
+  }

@@ -8,28 +8,28 @@
         </tr> 
         <tr>
             <th colspan="2">
-                Name of trainer/ service provider: {{traderName}}
+                Name of trainer/ service provider: {{registerHeader.name_of_trainer}}
             </th>
         </tr> 
         <tr>
             <th>
-                Description of training/ specification of content: {{trainingDescription}}
+                Description of training/ specification of content: {{registerHeader.description}}
             </th>
             <th>
-                Performance measure (PPM) to which this training contributes: {{ppm}}
+                Performance measure (PPM) to which this training contributes: {{registerHeader.ppm}}
             </th>
         </tr>
         <tr>
             <th>
-                Subject: {{subject}}
+                Subject: {{registerHeader.subject}} 
             </th>
             <th>
-                Target Group: {{target}}
+                Target Group:{{registerHeader.target_group}}
             </th>
         </tr>  
         <tr>
-            <th>Venue: {{venue}}</th>
-            <th>Training Date: {{date}}</th>
+            <th>Venue: {{registerHeader.venue}} </th>
+            <th>Training Date: {{registerHeader.date | date}} </th>
         </tr>  
         </thead>
     </table>
@@ -38,8 +38,8 @@
         <tr>
             <th>Training is: </th>
             <th>Tick:  </th>
-            <th>Accredited: </th>
-            <th>If is Accredited, indicate NQF level: ___________</th>
+            <th>Accredited: {{registerHeader.accredited}} </th>
+            <th>If is Accredited, indicate NQF level: {{registerHeader.nqf_level}}</th>
             <th>SACE endorsed</th>
             <th>__</th>
             <th>NON-FORMAL</th>
@@ -50,8 +50,8 @@
  <table>
     <thead>
     <tr>
-        <td>Time of training: From: {{startTime}} to {{endTime}} </td>
-        <td>Actual No of Hours: {{noHours}}</td>
+        <td>Time of training: From: {{registerHeader.start_time}}  to {{registerHeader.end_time}}  </td>
+        <td>Actual No of Hours:{{noHours}}:{{noMinutes}} </td>
         <td>Equity Targets: </td>
     </tr>
     </thead>
@@ -88,29 +88,31 @@
             <td>{{i + 1}}</td>
             <td>{{participant.surname}}</td>
             <td>{{participant.initials}}</td>
-            <td [ngClass]="{hiddenData: participant.persalNumber != persalNumber}">{{participant.persalNumber}}</td>
+            <td >{{participant.persalNumber}}</td>
             <td>{{participant.workplace}}</td>
             <td>{{participant.rank_pl}}</td>
             <td>{{participant.grade}}</td>
-            <td>{{participant.gender}}</td>
-            <td>{{participant.race}}</td>
+            <td>{{participant.gender | uppercase}}</td>
+            <td>{{participant.race | uppercase}}</td>
             <td>{{participant.disability}}</td>
             <td>{{participant.age}}</td>
-            <td style="background-color: rgb(19, 19, 19);">{{participant.contact}}</td>
-            <td style="background-color: rgb(17, 16, 16);">{{participant.email}}</td>
+            <td>{{participant.contact}}</td>
+            <td>{{participant.email}}</td>
     </tr>
 </tbody>
 <tfoot>
     <tr>
-        <td>{{participants.length}}</td>
+        <td>Participants: {{participants.length}}</td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
             <td></td>
-            <td></td>
-            <td></td>
+            <td>Male:{{males}},  Female: {{females}}</td>
+            <td class="text-3">
+                African: {{races.African}}, Coloured: {{races.Coloured}}, Indian: {{races.Indian}}, White: {{races.White}}, Asian: {{races.Asian}}
+            </td>
             <td></td>
             <td></td>
             <td></td>

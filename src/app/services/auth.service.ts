@@ -2,6 +2,11 @@ import { Injectable, inject } from '@angular/core';
 import { Auth, GoogleAuthProvider, User, authState, createUserWithEmailAndPassword, signInWithEmailAndPassword, signInWithRedirect} from '@angular/fire/auth';
 import { Router } from '@angular/router';
 
+interface Error {
+  code: string;
+  message: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -36,7 +41,7 @@ export class AuthService {
       await this.sendEmailVerification(user);
       this.router.navigate(['/user/email-verification']);
     } catch (error: unknown) {
-      const { code, message } = error as { code: string; message: string }
+      const { code, message } = error as Error;
       console.log('Code ', code);
       console.log('Message ', message);
     }
@@ -54,6 +59,15 @@ export class AuthService {
     console.log('Code ', code);
     console.log('Message ', message);
   }
+  }
+
+  async signOut(): Promise<void> {
+    try {
+      await this.auth.signOut();
+      this.router.navigate(['/welcome']);
+    } catch (error) {
+      console.log('Sign out', error);
+    }
   }
 
   private checkUserIsVerified(user: User): void {

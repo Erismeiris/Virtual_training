@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 import {MatIconModule} from '@angular/material/icon';
 import jsPdf from 'jspdf';
 import { CommonModule, NgFor } from '@angular/common';
+import { Participant, Register } from '../interfaces/all-interfaces';
+import { CrudService } from '../services/crud.service';
+import { ParticipantsService } from '../services/participants.service';
 
 @Component({
   selector: 'app-view-register',
@@ -15,52 +18,58 @@ import { CommonModule, NgFor } from '@angular/common';
   styleUrl: './view-register.component.css'
 })
 export class ViewRegisterComponent {
-  traderName:string = 'Erismeiris Hidalgo Reyes';
-  trainingDescription:string = 'Use computer on the Mathematics Lesson';
-  ppm:string = '0.5';
-  subject:string = 'Mathematics';
-  target:string = 'Grade 4 - 7';
-  venue:string = 'Room 1';
-  date:string = '2020-01-01';
-  startTime:string = "15:00:00"
-  endTime:string = "18:00:00"
-  persalNumber:any = 123456789 
+  public registerHeader!: Register 
+  public startTime!: string;
+  public endTime!: string;
+  public noHours!: number;
+  public noMinutes!: number;
+  public males!: number;
+  public females!: number;
+  public races = {
+    'African': 0,
+    'Coloured': 0,
+    'Indian': 0,
+    'White': 0,
+    'Asian': 0
+  }
 
-  noHours: number = this.calculateNoHours(this.startTime, this.endTime);
-  calculateNoHours(startTime: string, endTime: string): number {
+  public participants: Participant[] = []
+
+  constructor(private registerServices: CrudService, private participantsServices: ParticipantsService) {
+    this.registerServices.getRegisterAttendance().subscribe((data: any) => {
+      this.registerHeader =  data[0];
+      const {start_time, end_time} = this.registerHeader;
+      this.calculateNoHours(start_time, end_time);
+    });
+    this.participantsServices.getParticipants().subscribe((data: any) => {
+      this.participants = data;
+      
+      this.males = this.participants.filter((participant: Participant) => participant.gender === 'M').length;
+      this.females = this.participants.filter((participant: Participant) => participant.gender === 'F').length;
+      this.races.African = this.participants.filter((participant: Participant) => participant.race === 'african').length;
+      this.races.Coloured = this.participants.filter((participant: Participant) => participant.race === 'coloured').length;
+      this.races.Indian = this.participants.filter((participant: Participant) => participant.race === 'indian').length;
+      this.races.White = this.participants.filter((participant: Participant) => participant.race === 'white').length;
+      this.races.Asian = this.participants.filter((participant: Participant) => participant.race === 'asian').length;
+      
+
+
+        
+
+    });
+  }
+  
+  calculateNoHours(startTime: string, endTime: string) {
     const start = new Date(`2000-01-01 ${startTime}`);
     const end = new Date(`2000-01-01 ${endTime}`);
     const diff = end.getTime() - start.getTime();
     const hours = diff / (1000 * 60 * 60);
-    return hours;
-  }
-  participants = [
-    {surname: 'Hidalgo Reyes',
-    initials: 'E',        
-    persalNumber: '123456789',
-    workplace: 'School A',
-    rank_pl: '1',
-    grade: '4',
-    gender:"M",
-    race: 'Black',
-    disability: 'No',
-    age: '30',
-    contact: '1234567890',
-    email: 'erismeidis@gmail.com' },
-    {surname: 'Hidalgo Reyes',
-    initials: 'E',        
-    persalNumber: '8956585',
-    workplace: 'School A',
-    rank_pl: '1',
-    grade: '4',
-    gender:"M",
-    race: 'Black',
-    disability: 'No',
-    age: '30',
-    contact: '1565685',
-    email: 'erismeidis@gmail.com' }
+    const minutes = (diff / (1000 * 60)) % 60;
+    this.noHours = Math.floor(hours);
+    this.noMinutes = Math.floor(minutes);    
+  } 
 
-  ]
+ 
   download() {    
     const doc = new jsPdf("landscape",'pt','a4');
     const tablePrint = document.getElementById('content');
