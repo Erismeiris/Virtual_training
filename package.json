@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:virtualtrainingopenboard": "node dist/virtualtrainingopenboard/server/server.mjs"
+    "serve:ssr:virtualtrainingopenboard": "node dist/new-register-form/server/server.mjs"
   },
   "private": true,
   "dependencies": {

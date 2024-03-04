@@ -4,6 +4,13 @@ mat-form-field{
     margin: 10px;
 }
 
+@media screen and (max-width: 600px) {
+    mat-form-field {
+        width: 90%;
+
+    }
+} 
+
 button{
     margin: 10px;    
     width: 20%;
@@ -29,7 +36,21 @@ a{
     justify-content: center;
 }
 
+@media screen and (max-width: 600px) {
+    .seeTable {
+        width: 90%;
+    }
+}
+
 .seeTable a {
     display: flex;
     align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+    .sendButton {
+        background-color: blue;
+        width: 50%;
+    }
+    
 }
